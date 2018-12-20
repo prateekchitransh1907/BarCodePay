@@ -1,0 +1,37 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="welcome">Shopping Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let a of cartList">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{a.img}}">
+      </ion-avatar>
+      <h2 class="product">{{a.name}}</h2>
+      <p>{{a.price | currency:"EUR":true:"1.2"}}</p>
+    </ion-item>
+
+    <img src="{{a.img}}">
+    <ion-card-content>
+      <p class="product">{{a.description}}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+  <button class="checkout"(click)="checkout()" ion-button color="secondary" round>Checkout <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+
+  </button>
+</ion-content>
